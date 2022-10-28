@@ -1,8 +1,5 @@
 name: Terraform apply when on main branch
-on:
-  push:
-    branches:
-     - '*'
+on: [push]
 
 jobs:
   terraform-deployment:
