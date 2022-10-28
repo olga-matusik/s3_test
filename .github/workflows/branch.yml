@@ -1,0 +1,40 @@
+name: Terraform apply when on main branch
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  terraform-deployment:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      packages: write
+      contents: read
+      id-token: write
+    #each job is made out of steps- they run commands, setup tasks, etc...
+    #steps are as list of objects
+    steps:
+      #send aws credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with: 
+          role-to-assume: arn:aws:iam::727250514989:role/github-actions-oidc
+          aws-region: "eu-central-1"
+
+    steps:
+      #export credentials
+      - name: configure aws credentials
+        #here will be more code...
+        #when the account is set up and access is given
+
+      - name: clone/checkout repo code
+        uses: actions/checkout@v2
+
+      - name: terraform setup
+        uses: hashicorp/setup-terraform@v1
+
+      - name: terraform init
+        run: terraform init
+
+      - name: terraform plan for all branches
+        run: terraform plan
