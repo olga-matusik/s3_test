@@ -1,8 +1,6 @@
 name: Terraform apply when on main branch
-on:
-  push:
-    branches:
-      - main
+on: [push]
+
 jobs:
   terraform-deployment:
     runs-on: ubuntu-latest
@@ -34,4 +32,5 @@ jobs:
         run: terraform plan
 
       - name: terraform apply on main branch
+        if: ${{ github.ref == 'ref/heads/main'}}
         run: terraform apply -auto-approve
