@@ -21,12 +21,6 @@ jobs:
           role-to-assume: arn:aws:iam::727250514989:role/github-actions-oidc
           aws-region: "eu-central-1"
 
-    steps:
-      #export credentials
-      - name: configure aws credentials
-        #here will be more code...
-        #when the account is set up and access is given
-
       - name: clone/checkout repo code
         uses: actions/checkout@v2
 
