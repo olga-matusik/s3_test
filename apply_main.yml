@@ -37,14 +37,4 @@ jobs:
         run: echo ${{github.ref}}
       - name: terraform apply on main branch
         run: terraform apply -auto-approve
-<<<<<<< HEAD
         if: ${{ github.ref == 'refs/heads/main'}}
-        
-
-#testing on my account
-#another testing
-#yet another testing
-
-#test on main
-=======
->>>>>>> 988cab4 (works on main)
