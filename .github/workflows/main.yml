@@ -37,7 +37,7 @@ jobs:
         run: echo ${{github.ref}}
       - name: terraform apply on main branch
         run: terraform apply -auto-approve
-        if: ${{ github.ref == 'ref/heads/main'}}
+        if: ${{ github.ref == 'refs/heads/main'}}
         
 
 #testing on my account
