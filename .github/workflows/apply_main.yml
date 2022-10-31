@@ -38,10 +38,3 @@ jobs:
       - name: terraform apply on main branch
         run: terraform apply -auto-approve
         if: ${{ github.ref == 'refs/heads/main'}}
-        
-
-#testing on my account
-#another testing
-#yet another testing
-
-#test on main
