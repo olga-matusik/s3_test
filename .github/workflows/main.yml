@@ -30,7 +30,10 @@ jobs:
 
       - name: terraform plan for all branches
         run: terraform plan
-#testing on main directly
+
       - name: terraform apply on main branch
-        run: terraform apply -auto-approve
         if: ${{ github.ref == 'ref/heads/main'}}
+        run: terraform apply -auto-approve
+        
+
+#testing on my account
