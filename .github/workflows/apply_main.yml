@@ -19,7 +19,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with: 
-          role-to-assume: arn:aws:iam::727250514989:role/github-actions-oidc
+          role-to-assume: arn:aws:iam::535268269273:role/gr4-github-actions-oidc
           aws-region: "eu-central-1"
 
       - name: clone/checkout repo code
@@ -33,8 +33,7 @@ jobs:
 
       - name: terraform plan for all branches
         run: terraform plan
-      - name: print 'ref/heads/main'
-        run: echo ${{github.ref}}
+
       - name: terraform apply on main branch
         run: terraform apply -auto-approve
         if: ${{ github.ref == 'refs/heads/main'}}
