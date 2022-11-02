@@ -13,6 +13,7 @@ data "aws_iam_policy_document" "gr4_lambda_policies" {
         sid = "AllObjectActions"
         effect = "Allow"
         actions = ["s3:GetObject"]
+        #change the name of the bucket!!!
         resources = ["arn:aws:s3:::test-727250514989/*"]
     }
     statement {
@@ -26,7 +27,6 @@ data "aws_iam_policy_document" "gr4_lambda_policies" {
         effect = "Allow"
         actions = ["dynamodb:BatchWrite*"]
         resources =["arn:aws:dynamodb:*:*:table/images-meta"]
-
     }
 }
 
